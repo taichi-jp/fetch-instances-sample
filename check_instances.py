@@ -6,7 +6,7 @@ scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/au
 credentials = ServiceAccountCredentials.from_json_keyfile_name('sails-24e7e534a19d.json', scope)
 gc = gspread.authorize(credentials)
 
-allowed_instances = gc.open('無用GCE発見機で監視しないインスタンス').sheet1.get_all_values()
+allowed_instances = gc.open('無用GCE発見機 監視除外対象インスタンス').sheet1.get_all_values()
 allowed_instances.pop(0)
 
 df_allow = pd.DataFrame(allowed_instances, columns=['project', 'instance'])

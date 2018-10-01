@@ -10,4 +10,4 @@ do
 done
 
 python check_instances.py
-cat disallowed_instances.csv | column -t -s","
+cat disallowed_instances.csv | column -t -s"," | ./send_slack.sh
